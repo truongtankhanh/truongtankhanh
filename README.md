@@ -30,6 +30,12 @@ I take systems from requirements to production: architecture, ticket-level plann
 - Alerts with consecutive-breach counts and hysteresis, delivered through a transactional outbox with retries
 - Prometheus metrics, graceful drain, Kubernetes manifests (HPA, PDB, probes); e2e tests against real PostgreSQL and Mosquitto
 
+**[Architecture Decisions](https://github.com/truongtankhanh/architecture-decisions)** — the platform-level design record behind both systems: C4 views, cross-system ADRs and the review process.
+
+- 11 decision records on system boundaries, integration contracts, SSO with platform-owned roles, on-prem deployment and an observability baseline — each with rejected options, negative consequences and when to revisit
+- Shows a decision being superseded when the vendor's documentation disproved an assumption, and why the reversal stayed cheap
+- Risk register, design review checklist, and CI that checks numbering, supersession links and the index
+
 ---
 
 ### 🧭 Experience
@@ -81,7 +87,7 @@ Built and ran cross-border e-commerce integrations that continuously source and 
 
 ### 📐 Principles I lead by
 
-- **Design is written down.** Architecture decisions and tickets are documented and reviewed before code is written.
+- **Design is written down.** Architecture decisions and tickets are documented and reviewed before code is written — [see how](https://github.com/truongtankhanh/architecture-decisions).
 - **Simple scales.** Framework-native solutions first; every new tool has to earn its place.
 - **Standards are a team asset.** Shared conventions and automated review let a small team move fast across many repositories.
 - **Leads still ship.** I stay in the code, because good technical decisions come from knowing where the real complexity lives.
