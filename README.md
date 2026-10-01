@@ -23,6 +23,13 @@ I take systems from requirements to production: architecture, ticket-level plann
 - Every stage writes a reviewable artifact and stops; plans define a hard file scope; nothing is ever committed for you
 - Shown on real runs against Ops Command Center, linked to the commits they produced; CI checks the pipelines' own structure
 
+**[IoT Telemetry Pipeline](https://github.com/truongtankhanh/iot-telemetry-pipeline)** — campus sensor telemetry over MQTT into PostgreSQL, turned into alerts that open and resolve incidents in Ops Command Center.
+
+- ≈ 10 000 messages/s end to end on one replica with zero loss and zero duplicates; scales out with MQTT 5 shared subscriptions
+- Idempotent batched writes into day-partitioned tables with write-time rollups; per-device sequence numbers measure every lost message
+- Alerts with consecutive-breach counts and hysteresis, delivered through a transactional outbox with retries
+- Prometheus metrics, graceful drain, Kubernetes manifests (HPA, PDB, probes); e2e tests against real PostgreSQL and Mosquitto
+
 ---
 
 ### 🧭 Experience
@@ -37,7 +44,7 @@ I take systems from requirements to production: architecture, ticket-level plann
 - Set the key technical decisions: OneMap-based 2D maps (MapLibre, deck.gl), Entra ID SSO with an in-app role/permission model, single on-prem Docker Compose deployment
 - Lead a team of developers and build the operator-view app hands-on
 
-**IoT building-management platform** — backend that processes and serves IoT data for an automated building-management system.
+**IoT building-management platform** ([related open-source work](https://github.com/truongtankhanh/iot-telemetry-pipeline)) — backend that processes and serves IoT data for an automated building-management system.
 
 - Primary developer of core IoT data processing and provisioning features (Node.js, TypeORM, PostgreSQL)
 - Shipped services as Docker images to AWS ECR, running on Kubernetes; reviewed the team's code and tests
