@@ -6,7 +6,7 @@ I take systems from requirements to production: architecture, ticket-level plann
 
 ---
 
-### 🚀 Featured project
+### 🚀 Featured projects
 
 **[Ops Command Center](https://github.com/truongtankhanh/ops-command-center)** — a real-time operations console: live incidents on a campus map, camera tiles beside every incident, and an auditable response workflow.
 
@@ -16,6 +16,12 @@ I take systems from requirements to production: architecture, ticket-level plann
 - One-command Docker Compose stack; CI runs lint, typecheck, unit and e2e tests against a real database
 
 [![Ops Command Center](https://raw.githubusercontent.com/truongtankhanh/ops-command-center/main/docs/images/console-overview.webp)](https://github.com/truongtankhanh/ops-command-center)
+
+**[Claude Code Pipelines](https://github.com/truongtankhanh/claude-code-pipelines)** — staged, resumable Claude Code pipelines for engineers who review what their AI tools do, installable as a plugin.
+
+- Ticket implementation, diff-scoped self-review, API docs with drift detection, and test setup — each split into understand → plan → change → prove
+- Every stage writes a reviewable artifact and stops; plans define a hard file scope; nothing is ever committed for you
+- Shown on real runs against Ops Command Center, linked to the commits they produced; CI checks the pipelines' own structure
 
 ---
 
@@ -36,7 +42,7 @@ I take systems from requirements to production: architecture, ticket-level plann
 - Primary developer of core IoT data processing and provisioning features (Node.js, TypeORM, PostgreSQL)
 - Shipped services as Docker images to AWS ECR, running on Kubernetes; reviewed the team's code and tests
 
-**AI-assisted engineering workflow** — designed and maintain a standard set of Claude Code pipelines (scan → plan → apply → verify) used daily across NestJS, Angular and React codebases: diff-scoped self-review, API docs + OpenAPI generation with drift detection, test and lint scaffolding, and the ticket-driven pipeline that delivered the command-center monorepo.
+**AI-assisted engineering workflow** ([public edition](https://github.com/truongtankhanh/claude-code-pipelines)) — designed and maintain a standard set of Claude Code pipelines (scan → plan → apply → verify) used daily across NestJS, Angular and React codebases: diff-scoped self-review, API docs + OpenAPI generation with drift detection, test and lint scaffolding, and the ticket-driven pipeline that delivered the command-center monorepo.
 
 #### NewIT Vietnam — Backend Developer · _Jul 2020 – Feb 2024_
 
