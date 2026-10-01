@@ -6,6 +6,19 @@ I take systems from requirements to production: architecture, ticket-level plann
 
 ---
 
+### 🚀 Featured project
+
+**[Ops Command Center](https://github.com/truongtankhanh/ops-command-center)** — a real-time operations console: live incidents on a campus map, camera tiles beside every incident, and an auditable response workflow.
+
+- NestJS 12 + PostgreSQL API with lifecycle rules in the domain, row-locked transitions and domain events broadcast over Socket.IO
+- React 19 + MapLibre console that patches its cache from live events; works fully offline for on-prem sites
+- pnpm + Turborepo monorepo with a shared type-safe contract, camera-source adapter (mock / MediaMTX), architecture docs and ADRs
+- One-command Docker Compose stack; CI runs lint, typecheck, unit and e2e tests against a real database
+
+[![Ops Command Center](https://raw.githubusercontent.com/truongtankhanh/ops-command-center/main/docs/images/console-overview.webp)](https://github.com/truongtankhanh/ops-command-center)
+
+---
+
 ### 🧭 Experience
 
 #### Surbana Jurong — Project Lead (Full-stack) · _Apr 2024 – Present_
