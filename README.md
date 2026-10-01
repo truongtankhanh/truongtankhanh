@@ -8,33 +8,16 @@ I take systems from requirements to production: architecture, ticket-level plann
 
 ### 🚀 Featured projects
 
-**[Ops Command Center](https://github.com/truongtankhanh/ops-command-center)** — a real-time operations console: live incidents on a campus map, camera tiles beside every incident, and an auditable response workflow.
+Four public repositories that work together as one platform — each one backs a line of the experience below.
 
-- NestJS 12 + PostgreSQL API with lifecycle rules in the domain, row-locked transitions and domain events broadcast over Socket.IO
-- React 19 + MapLibre console that patches its cache from live events; works fully offline for on-prem sites
-- pnpm + Turborepo monorepo with a shared type-safe contract, camera-source adapter (mock / MediaMTX), architecture docs and ADRs
-- One-command Docker Compose stack; CI runs lint, typecheck, unit and e2e tests against a real database
+| Project | What it is | Proof point |
+| --- | --- | --- |
+| **[Ops Command Center](https://github.com/truongtankhanh/ops-command-center)** | Real-time operations console: live incidents on a campus map, camera tiles, auditable response workflow · NestJS 12, React 19, MapLibre, Socket.IO | Domain-enforced lifecycle, events after commit, one-command Compose stack, e2e tests on real PostgreSQL |
+| **[IoT Telemetry Pipeline](https://github.com/truongtankhanh/iot-telemetry-pipeline)** | Sensor telemetry over MQTT into PostgreSQL; alerts open and resolve incidents in the command center | **≈ 10 000 msg/s** on one replica, zero loss, zero duplicates; outbox delivery; Kubernetes-ready |
+| **[Architecture Decisions](https://github.com/truongtankhanh/architecture-decisions)** | The platform's design record: C4 views, cross-system ADRs, review process | **11 ADRs** with rejected options and trade-offs, incl. one superseded when an assumption failed |
+| **[Claude Code Pipelines](https://github.com/truongtankhanh/claude-code-pipelines)** | Staged, resumable AI-assisted delivery, installable as a Claude Code plugin | Plan before code, hard file scope, never commits; shown on real runs linked to their commits |
 
 [![Ops Command Center](https://raw.githubusercontent.com/truongtankhanh/ops-command-center/main/docs/images/console-overview.webp)](https://github.com/truongtankhanh/ops-command-center)
-
-**[Claude Code Pipelines](https://github.com/truongtankhanh/claude-code-pipelines)** — staged, resumable Claude Code pipelines for engineers who review what their AI tools do, installable as a plugin.
-
-- Ticket implementation, diff-scoped self-review, API docs with drift detection, and test setup — each split into understand → plan → change → prove
-- Every stage writes a reviewable artifact and stops; plans define a hard file scope; nothing is ever committed for you
-- Shown on real runs against Ops Command Center, linked to the commits they produced; CI checks the pipelines' own structure
-
-**[IoT Telemetry Pipeline](https://github.com/truongtankhanh/iot-telemetry-pipeline)** — campus sensor telemetry over MQTT into PostgreSQL, turned into alerts that open and resolve incidents in Ops Command Center.
-
-- ≈ 10 000 messages/s end to end on one replica with zero loss and zero duplicates; scales out with MQTT 5 shared subscriptions
-- Idempotent batched writes into day-partitioned tables with write-time rollups; per-device sequence numbers measure every lost message
-- Alerts with consecutive-breach counts and hysteresis, delivered through a transactional outbox with retries
-- Prometheus metrics, graceful drain, Kubernetes manifests (HPA, PDB, probes); e2e tests against real PostgreSQL and Mosquitto
-
-**[Architecture Decisions](https://github.com/truongtankhanh/architecture-decisions)** — the platform-level design record behind both systems: C4 views, cross-system ADRs and the review process.
-
-- 11 decision records on system boundaries, integration contracts, SSO with platform-owned roles, on-prem deployment and an observability baseline — each with rejected options, negative consequences and when to revisit
-- Shows a decision being superseded when the vendor's documentation disproved an assumption, and why the reversal stayed cheap
-- Risk register, design review checklist, and CI that checks numbering, supersession links and the index
 
 ---
 
@@ -46,7 +29,7 @@ I take systems from requirements to production: architecture, ticket-level plann
 
 - Designed the monorepo architecture (pnpm + Turborepo): **2 apps and 9 shared packages**
 - Broke the full scope into **44 implementation-ready tickets** across every feature epic, cross-checked against Figma
-- Designed the camera streaming layer (ONVIF / RTSP via MediaMTX) behind an adapter interface — mock and production sources switch by configuration
+- Designed camera integration through the site's video management system (VMS OpenAPI), relayed to browsers by MediaMTX behind an adapter interface — mock and production sources switch by configuration
 - Set the key technical decisions: OneMap-based 2D maps (MapLibre, deck.gl), Entra ID SSO with an in-app role/permission model, single on-prem Docker Compose deployment
 - Lead a team of developers and build the operator-view app hands-on
 
@@ -75,13 +58,15 @@ Built and ran cross-border e-commerce integrations that continuously source and 
 
 ### 🧰 Stack
 
-**Backend** &nbsp; ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![TypeORM](https://img.shields.io/badge/TypeORM-FE0803?style=flat-square&logo=typeorm&logoColor=white)
+**Backend** &nbsp; ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![TypeORM](https://img.shields.io/badge/TypeORM-FE0803?style=flat-square&logo=typeorm&logoColor=white) ![Socket.IO](https://img.shields.io/badge/Socket.IO-010101?style=flat-square&logo=socketdotio&logoColor=white) ![MQTT](https://img.shields.io/badge/MQTT-660066?style=flat-square&logo=mqtt&logoColor=white)
 
-**Frontend** &nbsp; ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) ![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white) ![Turborepo](https://img.shields.io/badge/Turborepo-EF4444?style=flat-square&logo=turborepo&logoColor=white)
+**Frontend** &nbsp; ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) ![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white) ![MapLibre](https://img.shields.io/badge/MapLibre-396CB2?style=flat-square&logo=maplibre&logoColor=white) ![Turborepo](https://img.shields.io/badge/Turborepo-EF4444?style=flat-square&logo=turborepo&logoColor=white)
 
 **Data** &nbsp; ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?style=flat-square&logo=amazondynamodb&logoColor=white)
 
-**Cloud & Infra** &nbsp; ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+**Cloud & Infra** &nbsp; ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white) ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+
+**AI-assisted delivery** &nbsp; ![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=claude&logoColor=white)
 
 ---
 
