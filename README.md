@@ -2,7 +2,7 @@
 
 **Project Lead · Full-stack Engineer** — building production software since 2018, from mobile and marketplace integrations to real-time command-center platforms.
 
-I take systems from requirements to production: architecture, ticket-level planning, documentation that stands up to client review, and hands-on implementation of the hardest parts. Today I lead the engineering of operations platforms for clients in Singapore — NestJS backends, React and Angular frontends, IoT and live-video integrations.
+I take systems from requirements to production: architecture, ticket-level planning, documentation that stands up to client review, and hands-on implementation of the hardest parts. Today I lead the engineering of operations platforms for clients in Singapore — NestJS backends, React and Angular frontends, IoT and live-video integrations, and the AWS infrastructure they run on.
 
 ---
 
@@ -85,4 +85,4 @@ Built and ran cross-border e-commerce integrations that continuously source and 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/truongtankhanh/)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:ttkhanh100896@gmail.com)
 
-📍 Vietnam · Open to conversations on technical leadership and full-stack architecture
+📍 Lâm Đồng, Vietnam (UTC+7) · Open to conversations on technical leadership and full-stack architecture
