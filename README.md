@@ -8,13 +8,14 @@ I take systems from requirements to production: architecture, ticket-level plann
 
 ### 🚀 Featured projects
 
-Four public repositories that work together as one platform — each one backs a line of the experience below.
+Five public repositories that work together as one platform — each one backs a line of the experience below.
 
 | Project | What it is | Proof point |
 | --- | --- | --- |
 | **[Ops Command Center](https://github.com/truongtankhanh/ops-command-center)** | Real-time operations console: live incidents on a campus map, camera tiles, auditable response workflow · NestJS 12, React 19, MapLibre, Socket.IO | Domain-enforced lifecycle, events after commit, one-command Compose stack, e2e tests on real PostgreSQL |
 | **[IoT Telemetry Pipeline](https://github.com/truongtankhanh/iot-telemetry-pipeline)** | Sensor telemetry over MQTT into PostgreSQL; alerts open and resolve incidents in the command center | **≈ 10 000 msg/s** on one replica, zero loss, zero duplicates; outbox delivery; Kubernetes-ready |
-| **[Architecture Decisions](https://github.com/truongtankhanh/architecture-decisions)** | The platform's design record: C4 views, cross-system ADRs, review process | **11 ADRs** with rejected options and trade-offs, incl. one superseded when an assumption failed |
+| **[Platform on AWS](https://github.com/truongtankhanh/platform-aws)** | Both systems on AWS as CDK code: ECS Fargate, RDS, AWS IoT Core, CloudFront + WAF, Keycloak, Secrets Manager, CloudWatch | **cdk-nag clean** on every synth, least privilege asserted in tests, GitHub OIDC deploys with no stored keys |
+| **[Architecture Decisions](https://github.com/truongtankhanh/architecture-decisions)** | The platform's design record: C4 views, cross-system ADRs, review process | **12 ADRs** with rejected options and trade-offs, incl. one superseded when an assumption failed |
 | **[Claude Code Pipelines](https://github.com/truongtankhanh/claude-code-pipelines)** | Staged, resumable AI-assisted delivery, installable as a Claude Code plugin | Plan before code, hard file scope, never commits; shown on real runs linked to their commits |
 
 [![Ops Command Center](https://raw.githubusercontent.com/truongtankhanh/ops-command-center/main/docs/images/console-overview.webp)](https://github.com/truongtankhanh/ops-command-center)
@@ -46,7 +47,7 @@ Built and ran cross-border e-commerce integrations that continuously source and 
 
 - **Brandtmall (3 years):** built AWS ECS sync services keeping Tmall listings live (S3, DynamoDB, AWS Translate); in phase 2, **led the migration from JavaScript to TypeScript microservices** on MySQL and owned image processing
 - **Sole core developer** of an eBay US listing service and **core developer** of a 95Point integration — owning staging and production releases end to end
-- **Primary developer** of the Mercari integration and developer / code reviewer on the Yahoo Shopping integration (TypeScript, AWS CDK, RDS, TypeORM)
+- **Primary developer** of the Mercari integration and developer / code reviewer on the Yahoo Shopping integration (TypeScript, AWS CDK, RDS, TypeORM; [public CDK work](https://github.com/truongtankhanh/platform-aws))
 - Proposed, built and operated an internal serverless tool (API Gateway, React, CloudFront) replacing direct S3 file edits with controlled, auditable updates
 
 #### Earlier
