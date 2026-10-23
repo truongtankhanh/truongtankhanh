@@ -1,6 +1,6 @@
 ### Trương Tấn Khánh
 
-**Project Lead · Full-stack Engineer** — building production software since 2018, from mobile and marketplace integrations to real-time command-center platforms.
+**Team Lead · Full-stack Engineer** — building production software since 2018, from mobile and marketplace integrations to real-time command-center platforms.
 
 I take systems from requirements to production: architecture, ticket-level planning, documentation that stands up to client review, and hands-on implementation of the hardest parts. Today I lead the engineering of operations platforms for clients in Singapore — NestJS backends, React and Angular frontends, IoT and live-video integrations, and the AWS infrastructure they run on.
 
