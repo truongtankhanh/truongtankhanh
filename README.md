@@ -2,9 +2,11 @@
 
 **Full-stack Engineer** — building production software since 2018, from mobile and marketplace integrations to real-time command-center platforms.
 
-I take systems from requirements to production: architecture, ticket-level planning, documentation that stands up to client review, and hands-on implementation of the hardest parts. Today I lead the engineering of operations platforms for clients in Singapore — NestJS backends, React and Angular frontends, IoT and live-video integrations, and the AWS infrastructure they run on.
+I design, build and ship systems end to end: system design, NestJS and Node.js backends, React and Angular frontends, and the DevOps that runs them. I take work from requirements to production, with documentation that stands up to client review. Today I work on operations platforms for clients in Singapore, from IoT and live-video integrations to the infrastructure they run on.
 
-🌐 **Website and CV:** [truongtankhanh.github.io](https://truongtankhanh.github.io)
+**At a glance:** 7+ years shipping production software · 5+ marketplaces integrated · 3+ engineers led · ~50 repositories and services · ~10k messages/s on one replica (open-source telemetry pipeline)
+
+🌐 **Website:** [truongtankhanh.github.io](https://truongtankhanh.github.io) · 📄 **CV (PDF):** [Truong_Tan_Khanh_CV.pdf](https://truongtankhanh.github.io/Truong_Tan_Khanh_CV.pdf)
 
 ---
 
@@ -26,15 +28,17 @@ Five public repositories that work together as one platform — each one backs a
 
 ### 🧭 Experience
 
-#### Surbana Jurong — Project Lead (Full-stack) · _Apr 2024 – Present_
+#### Surbana Jurong — Full-stack Engineer · _Apr 2024 – Present_
 
-**Unified Command System** — command-center portal for island-wide operations in Singapore: an operator console plus a 3-projector video wall showing live cameras, maps and incidents.
+I lead a team of three or more developers across about 50 repositories and services, turning requirements from the project manager into detailed designs and implementation plans.
 
-- Designed the monorepo architecture (pnpm + Turborepo): **2 apps and 9 shared packages**
-- Broke the full scope into **44 implementation-ready tickets** across every feature epic, cross-checked against Figma
-- Designed camera integration through the site's video management system (VMS OpenAPI), relayed to browsers by MediaMTX behind an adapter interface — mock and production sources switch by configuration
-- Set the key technical decisions: OneMap-based 2D maps (MapLibre, deck.gl), Entra ID SSO with an in-app role/permission model, single on-prem Docker Compose deployment
-- Lead a team of developers and build the operator-view app hands-on
+**Integrated Command Platform** — command-center portal for operations in Singapore: an operator console and a multi-screen video wall with live cameras, maps and incidents.
+
+- Designed the monorepo architecture (pnpm workspaces and Turborepo): **two apps and nine shared packages**
+- Broke the full scope into **44 implementation-ready tickets** across every feature epic, checked against the Figma designs
+- Designed the live **camera integration**, relayed to browsers by MediaMTX behind an adapter, so mock and production sources switch by configuration
+- Set the key technical decisions: **2D maps with MapLibre and deck.gl**, **single sign-on** with an in-app permission model, and a **single on-prem Docker Compose deployment**
+- Still building the **operator-view app hands-on**
 
 **IoT building-management platform** ([related open-source work](https://github.com/truongtankhanh/iot-telemetry-pipeline)) — backend that processes and serves IoT data for an automated building-management system.
 
